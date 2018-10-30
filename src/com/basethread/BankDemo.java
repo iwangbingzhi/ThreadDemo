@@ -19,13 +19,13 @@ class Bank{
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println("sum=" + sum);
+            System.out.println("sum=" + sum+Thread.currentThread().getName());
     }
 }
 class Cus implements Runnable{
     private Bank b = new Bank();
     public void run(){
-        for (int i = 0; i <3 ; i++) {
+        for (int i = 0; i <100 ; i++) {
             b.add(100);
         }
     }
