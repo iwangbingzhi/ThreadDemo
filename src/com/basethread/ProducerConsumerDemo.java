@@ -26,6 +26,7 @@ class Resource{
 
     public synchronized void set(String name){
         while (flag) {
+            System.out.println("生产者的flag="+flag);
             try {
                 wait();
             } catch (InterruptedException e) {
@@ -39,6 +40,7 @@ class Resource{
     }
     public synchronized void out(){
         while (!flag){
+            System.out.println("消费者的!flag="+!flag);
             try {
                 wait();
             } catch (InterruptedException e) {
@@ -50,6 +52,8 @@ class Resource{
         this.notifyAll();
     }
 }
+
+
 class Producer implements Runnable{
     private Resource res;
 
@@ -58,7 +62,7 @@ class Producer implements Runnable{
     }
 
     public void run() {
-        while (true){
+        while (true) {
             res.set("+iphone X+");
         }
     }
@@ -72,7 +76,7 @@ class Consumer implements Runnable{
     }
 
     public void run() {
-        while (true){
+        while (true) {
             res.out();
         }
     }

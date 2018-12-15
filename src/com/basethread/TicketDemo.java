@@ -1,8 +1,9 @@
 package com.basethread;
 
 /*
-同步函数的锁是this;
+普通同步函数的锁是this;
 静态同步函数的锁是class对象
+同步方法块锁是括号里面的对象
 */
 public class TicketDemo {
     public static void main(String[] args) {

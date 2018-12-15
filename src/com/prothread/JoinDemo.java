@@ -6,21 +6,25 @@ public class JoinDemo {
         Demo d = new Demo();
         Thread t1 = new Thread(d);
         Thread t2 = new Thread(d);
+        Thread t3 = new Thread(d);
+
         t1.start();
-        //t1.join(); //t1得到cpu执行权
+        t1.join(); //t1得到cpu执行权
         t2.start();
+        //t2.join();
+        t3.start();
 
       /*  for (int i = 0; i <77 ; i++) {
-            System.out.println("mian...."+i);
+            System.out.println("main...."+i);
         }*/
         System.out.println("main over");
     }
 }
 class Demo implements Runnable{
     public void run(){
-        for (int i = 0; i <66 ; i++) {
-            System.out.println(Thread.currentThread().getName()+"...."+i);
-            Thread.yield(); //强制让线程释放执行权
+            for (int i = 0; i < 20; i++) {
+                System.out.println(Thread.currentThread().getName() + "...." + i);
+                Thread.yield(); //强制让线程释放执行权
         }
     }
 }

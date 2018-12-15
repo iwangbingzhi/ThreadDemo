@@ -15,7 +15,7 @@ class Bank{
     public synchronized void add(int n) {
             sum += n;
             try {
-                Thread.sleep(10);
+                Thread.sleep(1);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -25,7 +25,7 @@ class Bank{
 class Cus implements Runnable{
     private Bank b = new Bank();
     public void run(){
-        for (int i = 0; i <100 ; i++) {
+        for (int i = 0; i <10 ; i++) {
             b.add(100);
         }
     }
