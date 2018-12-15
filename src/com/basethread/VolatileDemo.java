@@ -9,7 +9,6 @@ public class VolatileDemo {
         thread.start();
         thread2.start();
         thread3.start();
-
     }
 }
 class TicketDemo2 implements Runnable{

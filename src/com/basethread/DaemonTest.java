@@ -1,6 +1,6 @@
 package com.basethread;
 
-public class Test {
+public class DaemonTest {
     public static void main(String[] args) throws InterruptedException {
         Thread  userThread = new Thread(()->{
             long num = 0;
