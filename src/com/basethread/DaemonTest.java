@@ -12,7 +12,6 @@ public class DaemonTest {
                 }
                 System.out.println(Thread.currentThread().getName()+num++);
             }
-
         },"用户线程");
 
         Thread  daemonThread = new Thread(()->{
@@ -30,5 +29,6 @@ public class DaemonTest {
         daemonThread.setDaemon(true);  //设置为守护线程
         userThread.start();
         daemonThread.start();
+
     }
 }
